@@ -3,7 +3,7 @@
 
 using System;
 
-public class HelloWorld
+public class CSharp-Practice
 {
     public static void Main(string[] args)
     {
