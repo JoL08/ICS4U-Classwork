@@ -17,3 +17,16 @@ public class Program
 
    }
 }
+
+using System;
+public class Program
+{
+    public static void Main(string[] args)
+   {
+        int weekday = int.Parse(Console.Write());
+        WEEKDAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        if weekday.isDigit() || weekday <= 6 || weekday >= 0{
+            
+        }
+   }
+}
