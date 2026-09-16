@@ -33,3 +33,20 @@ public class Program
         }
     }
 }
+
+using System;
+public class Project
+{
+    public static void Main(string[] args)
+    {
+        for (int i = 0; i < 100; i++){
+            Console.WriteLine(i);
+        }
+        
+        int j = 0;
+        while (j < 100){
+            Console.WriteLine(j);
+            j++;
+        }
+    }
+}
