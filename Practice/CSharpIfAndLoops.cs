@@ -22,11 +22,14 @@ using System;
 public class Program
 {
     public static void Main(string[] args)
-   {
-        int weekday = int.Parse(Console.Write());
-        WEEKDAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        if weekday.isDigit() || weekday <= 6 || weekday >= 0{
-            
+    {
+        Console.Write("Enter weekday: ");
+        int dayNum = int.Parse(Console.ReadLine());
+        string[] WEEKDAY = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+        if (dayNum >= 0 && dayNum <= 6) {
+            Console.WriteLine(WEEKDAY[dayNum]);
+        } else {
+            Console.WriteLine("Invalid weekday");
         }
-   }
+    }
 }
