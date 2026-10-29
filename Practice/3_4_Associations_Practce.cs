@@ -15,6 +15,8 @@ class Weapon{
 }
 
 class Character{
+    // class WeaponNotEquippedExcewption : Exception;
+    
     private int _health;
     private string _name;
     private Weapon _weapon;
@@ -28,7 +30,22 @@ class Character{
         this._weapon = newWeapon;
     }
     public void Attack(Character other){
-        int damage = this._weapon.GetDamage();
+        if (this == other){
+            Console.WriteLine("Stop hitting yourself");
+        }
+        // if (this._weapon == null){
+        //     throw WeaponNotEquippedExcewption ("Must have weapon equipped");
+        }
+        int damage;
+        try{
+            damage = this._weapon.GetDamage();
+        }
+        catch (NullReferenceException e){
+            damage = 1;
+        }
+        // if (this.weapon != null){
+        //     int damage = this._weapon.GetDamage();
+        // }
         other._health -= damage;
     }
 }
@@ -40,8 +57,8 @@ public class Program {
         Weapon sword = new Weapon("Sword", 25);
         
         player1.Equip(sword);
+        Console.WriteLine(enemy.GetHealth());
+        
         player1.Attack(enemy);
-
-        Console.WriteLine(player1);
-    }
+        Console.WriteLine(enemy.GetHealth());
 }
