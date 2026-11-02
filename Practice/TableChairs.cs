@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Chair{
     private string _color;
@@ -22,7 +23,7 @@ class Chair{
 }
 
 class Table{
-    private Chair[] _chairs;
+    private List<Chair> _chairs = new List<Chair>();
     private int _maxChair;
     private int _length;
     private int _width;
@@ -35,17 +36,16 @@ class Table{
     }
 
     public void AddChair(Chair newChair){
-        Array.Resize(ref this._chairs, this._chairs.Length + 1);
-        this._chairs[this._chairs.Length - 1] = newChair;
+        this._chairs.Add(newChair);
     }
 
     public int GetNumChairs(){
-        return this._chairs.Length;
+        return this._chairs.Count;
     }
 
     public int GetNumOccupants(){
         int chairCount = 0;
-        for(int i = 0; i < _chairs.Length; i++){
+        for(int i = 0; i < _chairs.Count; i++){
             if(_chairs[i].IsOccupied()){
                 chairCount ++;
             }
