@@ -52,8 +52,8 @@ class Table{
 
     public int GetNumOccupants(){
         int chairCount = 0;
-        for(int i = 0; i < _chairs.Count; i++){
-            if(_chairs[i].IsOccupied()){
+        foreach (Chair c in this._chairs){
+            if(c.IsOccupied() == true) {
                 chairCount++;
             }
         }
@@ -89,10 +89,15 @@ public class Project{
         
         Tabel t2 = new Table(3, 1, 1);
         Chair[] chairs = {
-            new Chair("blue");
-            new Chair("blue");
-            new Chair("blue");
-            new Chair("blue");
+            new Chair("blue"),
+            new Chair("blue"),
+            new Chair("blue")
         }
+        
+        foreach (Chair c in chairs){
+			t2.AddChair(c);
+		}
+		Console.WriteLine(t2.GetNumOccupants());
+
     }
 }
