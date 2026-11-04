@@ -80,6 +80,19 @@ public class Project{
         t1.AddChair(new Chair("yellow"));
         Console.WriteLine(t1.GetNumChairs());  // 3
         
-        t1.AddChair(new Chair("yellow"));
+        try{
+            t1.AddChair(new Chair("yellow"));
+        }
+        catch (TableFullException){
+            Console.WriteLine("oops, I cant add any more chairs.");
+        }
+        
+        Tabel t2 = new Table(3, 1, 1);
+        Chair[] chairs = {
+            new Chair("blue");
+            new Chair("blue");
+            new Chair("blue");
+            new Chair("blue");
+        }
     }
 }
